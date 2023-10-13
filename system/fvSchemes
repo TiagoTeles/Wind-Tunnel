@@ -9,42 +9,47 @@ FoamFile
 {
     format      ascii;
     class       dictionary;
-    location    "system";
-    object      controlDict;
+    object      fvSchemes;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     foamRun;
+ddtSchemes
+{
+    default         steadyState;
+}
 
-solver          incompressibleFluid;
+gradSchemes
+{
+    default         Gauss linear;
+}
 
-startFrom       latestTime;
+divSchemes
+{
+    default             none;
+    div(phi,U)          bounded Gauss linearUpwind grad(U);
+    div(phi,nuTilda)    bounded Gauss linearUpwind grad(nuTilda);
+    div((nuEff*dev2(T(grad(U))))) Gauss linear;
+}
 
-startTime       0;
+laplacianSchemes
+{
+    default         Gauss linear corrected;
+}
 
-stopAt          endTime;
+interpolationSchemes
+{
+    default         linear;
+}
 
-endTime         500;
+snGradSchemes
+{
+    default         corrected;
+}
 
-deltaT          1;
-
-writeControl    timeStep;
-
-writeInterval   50;
-
-purgeWrite      0;
-
-writeFormat     binary;
-
-writePrecision  6;
-
-writeCompression off;
-
-timeFormat      general;
-
-timePrecision   6;
-
-runTimeModifiable true;
+wallDist
+{
+    method meshWave;
+}
 
 
 // ************************************************************************* //
