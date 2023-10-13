@@ -1,0 +1,179 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      snappyHexMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+castellatedMesh false;
+snap            false;
+addLayers       true;
+
+geometry
+{
+    domain
+    {
+        type triSurfaceMesh; 
+        file "domain.stl";
+    }
+    nozzle_int
+    {
+        type triSurfaceMesh; 
+        file "nozzle_int.stl";
+    }
+    nozzle_ext
+    {
+        type triSurfaceMesh; 
+        file "nozzle_ext.stl";
+    }
+    collector_int
+    {
+        type triSurfaceMesh; 
+        file "collector_int.stl";
+    }
+    collector_ext
+    {
+        type triSurfaceMesh; 
+        file "collector_ext.stl";
+    }
+    diffuser_int
+    {
+        type triSurfaceMesh; 
+        file "diffuser_int.stl";
+    }
+    diffuser_ext
+    {
+        type triSurfaceMesh; 
+        file "diffuser_ext.stl";
+    }
+    shear_layer
+    {
+        type searchableBox;
+        min (2.75 0.7 2.75);
+        max (5.25 1.5 3.25);
+    }
+};
+
+castellatedMeshControls
+{
+    maxLocalCells       100000;
+    maxGlobalCells      1000000;
+    minRefinementCells  10;
+    maxLoadUnbalance    0.10;
+    nCellsBetweenLevels 3;
+    resolveFeatureAngle 30;
+    allowFreeStandingZoneFaces true;
+
+    locationInMesh (1E-3 1.5 2.5);
+
+    features
+    (
+        {file "domain.eMesh";           level 0;}
+        {file "nozzle_int.eMesh";       level 0;}
+        {file "nozzle_ext.eMesh";       level 0;}
+        {file "collector_int.eMesh";    level 0;}
+        {file "collector_ext.eMesh";    level 0;}
+        {file "diffuser_int.eMesh";     level 0;}
+        {file "diffuser_ext.eMesh";     level 0;}
+    );
+
+    refinementSurfaces
+    {
+        domain          {level (0 0);}
+        nozzle_int      {level (1 1);}
+        nozzle_ext      {level (0 0);}
+        collector_int   {level (1 1);}
+        collector_ext   {level (0 0);}
+        diffuser_int    {level (1 1);}
+        diffuser_ext    {level (0 0);}
+    }
+
+    refinementRegions
+    {
+        shear_layer
+        {
+            mode inside;
+            level 1;
+        }
+    }  
+}
+
+snapControls
+{
+    nSmoothPatch 3;
+    tolerance 2.0;
+    nSolveIter 100;
+    nRelaxIter 5;
+    nFeatureSnapIter 10;
+}
+
+addLayersControls
+{
+    relativeSizes true;
+    expansionRatio 1.5;
+    finalLayerThickness 0.5;
+    minThickness 0.01;
+
+    layers
+    {
+        nozzle_int
+        {
+            nSurfaceLayers 20;
+        }
+        collector_int
+        {
+            nSurfaceLayers 20;
+        }
+        diffuser_int
+        {
+            nSurfaceLayers 20;
+        }
+    }
+
+    featureAngle 180;
+    slipFeatureAngle 30;
+
+    nLayerIter 50;
+    nRelaxedIter 20;
+    nRelaxIter 5;
+
+    nGrow 0;
+    nSmoothSurfaceNormals 1;
+    nSmoothNormals 3;
+    nSmoothThickness 10;
+    maxFaceThicknessRatio 0.5;
+    maxThicknessToMedialRatio 0.6;
+    minMedialAxisAngle 90;
+    nMedialAxisIter 10;
+    nBufferCellsNoExtrude 0;
+    additionalReporting false;
+}
+
+meshQualityControls
+{
+    maxNonOrtho 65;
+    maxBoundarySkewness 20;
+    maxInternalSkewness 4;
+    maxConcave 80;
+    minVol -1e30;
+    // minTetQuality 1e-15;
+    minTetQuality -1e30;
+    minTwist 0.02;
+    minDeterminant 0.001;
+    minFaceWeight 0.05;
+    minVolRatio 0.01;
+    nSmoothScale   4;
+    errorReduction 0.75;
+}
+
+mergeTolerance 1e-6;
+
+// ************************************************************************* //
