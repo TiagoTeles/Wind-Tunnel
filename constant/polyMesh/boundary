@@ -37,36 +37,42 @@ FoamFile
     nozzle_int
     {
         type            wall;
+        inGroups        List<word> 1(wall);
         nFaces          33142;
         startFace       2924028;
     }
     nozzle_ext
     {
         type            wall;
+        inGroups        List<word> 1(wall);
         nFaces          6981;
         startFace       2957170;
     }
     collector_int
     {
         type            wall;
+        inGroups        List<word> 1(wall);
         nFaces          6672;
         startFace       2964151;
     }
     collector_ext
     {
         type            wall;
+        inGroups        List<word> 1(wall);
         nFaces          5998;
         startFace       2970823;
     }
     diffuser_int
     {
         type            wall;
+        inGroups        List<word> 1(wall);
         nFaces          17238;
         startFace       2976821;
     }
     diffuser_ext
     {
         type            wall;
+        inGroups        List<word> 1(wall);
         nFaces          2286;
         startFace       2994059;
     }
