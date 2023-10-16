@@ -46,5 +46,23 @@ timePrecision   6;
 
 runTimeModifiable true;
 
+functions
+{
+    residuals
+    {
+        type solverInfo;
+        libs (utilityFunctionObjects);
+        fields (U p);
+    }
+    yPlus
+    {
+        type yPlus;
+        libs (fieldFunctionObjects);
+        writeControl writeTime;
+        patches (internal);
+        format gnuplot;
+    }
+}
+
 
 // ************************************************************************* //
