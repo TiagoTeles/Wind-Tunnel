@@ -19,68 +19,27 @@ addLayers       true;
 
 geometry
 {
-    nozzle
-    {
-        type triSurfaceMesh; 
-        file "nozzle.stl";
-    }
-    nozzle_int
-    {
-        type triSurfaceMesh; 
-        file "nozzle_int.stl";
-    }
-    nozzle_ext
-    {
-        type triSurfaceMesh; 
-        file "nozzle_ext.stl";
-    }
-    collector
-    {
-        type triSurfaceMesh; 
-        file "collector.stl";
-    }
-    collector_int
-    {
-        type triSurfaceMesh; 
-        file "collector_int.stl";
-    }
-    collector_ext
-    {
-        type triSurfaceMesh; 
-        file "collector_ext.stl";
-    }
-    diffuser
-    {
-        type triSurfaceMesh; 
-        file "diffuser.stl";
-    }
-    diffuser_int
-    {
-        type triSurfaceMesh; 
-        file "diffuser_int.stl";
-    }
-    diffuser_ext
-    {
-        type triSurfaceMesh; 
-        file "diffuser_ext.stl";
-    }
-    test_section
-    {
-        type triSurfaceMesh; 
-        file "test_section.stl";
-    }
-    // shear_layer
-    // {
-    //     type searchableBox;
-    //     min (2.75 0.7 2.75);
-    //     max (5.25 1.5 3.25);
-    // }
+    inlet           {type triSurfaceMesh; file "inlet.stl";}
+    test_section    {type triSurfaceMesh; file "test_section.stl";}
+    outlet          {type triSurfaceMesh; file "outlet.stl";}
+
+    nozzle          {type triSurfaceMesh; file "nozzle.stl";}
+    nozzle_int      {type triSurfaceMesh; file "nozzle_int.stl";}
+    nozzle_ext      {type triSurfaceMesh; file "nozzle_ext.stl";}
+
+    collector       {type triSurfaceMesh; file "collector.stl";}
+    collector_int   {type triSurfaceMesh; file "collector_int.stl";}
+    collector_ext   {type triSurfaceMesh; file "collector_ext.stl";}
+
+    diffuser        {type triSurfaceMesh; file "diffuser.stl";}
+    diffuser_int    {type triSurfaceMesh; file "diffuser_int.stl";}
+    diffuser_ext    {type triSurfaceMesh; file "diffuser_ext.stl";}
 };
 
 castellatedMeshControls
 {
     maxLocalCells       100000;
-    maxGlobalCells      1000000;
+    maxGlobalCells      2000000;
     minRefinementCells  10;
     maxLoadUnbalance    0.10;
     nCellsBetweenLevels 3;
@@ -91,51 +50,32 @@ castellatedMeshControls
 
     features
     (
-        {file "nozzle_ext.eMesh";       level 0;}
-        {file "nozzle_int.eMesh";       level 0;}
-        {file "collector_ext.eMesh";    level 0;}
-        {file "collector_int.eMesh";    level 0;}
-        {file "diffuser_ext.eMesh";     level 0;}
-        {file "diffuser_int.eMesh";     level 0;}
+        {file "nozzle_int.eMesh";    level 3;}
+        {file "nozzle_ext.eMesh";    level 3;}
+        {file "collector_int.eMesh"; level 3;}
+        {file "collector_ext.eMesh"; level 3;}
+        {file "diffuser_int.eMesh";  level 3;}
+        {file "diffuser_ext.eMesh";  level 3;}
     );
 
     refinementSurfaces
     {
+        inlet           {level (2 2);}
+        outlet          {level (2 2);}
         nozzle_int      {level (3 3);}
-        nozzle_ext      {level (0 0);}
+        nozzle_ext      {level (3 3);}
         collector_int   {level (3 3);}
-        collector_ext   {level (0 0);}
+        collector_ext   {level (3 3);}
         diffuser_int    {level (3 3);}
-        diffuser_ext    {level (0 0);}
+        diffuser_ext    {level (3 3);}
     }
 
     refinementRegions
     {
-        nozzle
-        {
-            mode inside;
-            level 2;
-        }
-        test_section
-        {
-            mode inside;
-            level 2;
-        }
-        collector
-        {
-            mode inside;
-            level 2;
-        }
-        diffuser
-        {
-            mode inside;
-            level 2;
-        }
-        // shear_layer
-        // {
-        //     mode inside;
-        //     level 1;
-        // }
+        nozzle       {mode inside; level 2;}
+        test_section {mode inside; level 2;}
+        collector    {mode inside; level 2;}
+        diffuser     {mode inside; level 2;}
     }  
 }
 
