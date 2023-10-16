@@ -19,10 +19,10 @@ addLayers       true;
 
 geometry
 {
-    domain
+    nozzle
     {
         type triSurfaceMesh; 
-        file "domain.stl";
+        file "nozzle.stl";
     }
     nozzle_int
     {
@@ -34,6 +34,11 @@ geometry
         type triSurfaceMesh; 
         file "nozzle_ext.stl";
     }
+    collector
+    {
+        type triSurfaceMesh; 
+        file "collector.stl";
+    }
     collector_int
     {
         type triSurfaceMesh; 
@@ -43,6 +48,11 @@ geometry
     {
         type triSurfaceMesh; 
         file "collector_ext.stl";
+    }
+    diffuser
+    {
+        type triSurfaceMesh; 
+        file "diffuser.stl";
     }
     diffuser_int
     {
@@ -54,12 +64,17 @@ geometry
         type triSurfaceMesh; 
         file "diffuser_ext.stl";
     }
-    shear_layer
+    test_section
     {
-        type searchableBox;
-        min (2.75 0.7 2.75);
-        max (5.25 1.5 3.25);
+        type triSurfaceMesh; 
+        file "test_section.stl";
     }
+    // shear_layer
+    // {
+    //     type searchableBox;
+    //     min (2.75 0.7 2.75);
+    //     max (5.25 1.5 3.25);
+    // }
 };
 
 castellatedMeshControls
@@ -76,33 +91,51 @@ castellatedMeshControls
 
     features
     (
-        {file "domain.eMesh";           level 0;}
-        {file "nozzle_int.eMesh";       level 0;}
         {file "nozzle_ext.eMesh";       level 0;}
-        {file "collector_int.eMesh";    level 0;}
+        {file "nozzle_int.eMesh";       level 0;}
         {file "collector_ext.eMesh";    level 0;}
-        {file "diffuser_int.eMesh";     level 0;}
+        {file "collector_int.eMesh";    level 0;}
         {file "diffuser_ext.eMesh";     level 0;}
+        {file "diffuser_int.eMesh";     level 0;}
     );
 
     refinementSurfaces
     {
-        domain          {level (0 0);}
-        nozzle_int      {level (1 1);}
+        nozzle_int      {level (3 3);}
         nozzle_ext      {level (0 0);}
-        collector_int   {level (1 1);}
+        collector_int   {level (3 3);}
         collector_ext   {level (0 0);}
-        diffuser_int    {level (1 1);}
+        diffuser_int    {level (3 3);}
         diffuser_ext    {level (0 0);}
     }
 
     refinementRegions
     {
-        shear_layer
+        nozzle
         {
             mode inside;
-            level 1;
+            level 2;
         }
+        test_section
+        {
+            mode inside;
+            level 2;
+        }
+        collector
+        {
+            mode inside;
+            level 2;
+        }
+        diffuser
+        {
+            mode inside;
+            level 2;
+        }
+        // shear_layer
+        // {
+        //     mode inside;
+        //     level 1;
+        // }
     }  
 }
 
@@ -126,15 +159,15 @@ addLayersControls
     {
         nozzle_int
         {
-            nSurfaceLayers 20;
+            nSurfaceLayers 8;
         }
         collector_int
         {
-            nSurfaceLayers 20;
+            nSurfaceLayers 8;
         }
         diffuser_int
         {
-            nSurfaceLayers 20;
+            nSurfaceLayers 8;
         }
     }
 

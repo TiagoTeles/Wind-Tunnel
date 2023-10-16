@@ -17,7 +17,6 @@ cylinder
 {
     surfaces
     (
-        "domain.stl"
         "nozzle_ext.stl"
         "nozzle_int.stl"
         "collector_ext.stl"
