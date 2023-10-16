@@ -16,13 +16,13 @@ FoamFile
 
 6
 (
-    inlet
+    left
     {
         type            patch;
         nFaces          375;
         startFace       43025;
     }
-    outlet
+    right
     {
         type            patch;
         nFaces          375;
@@ -30,29 +30,25 @@ FoamFile
     }
     top
     {
-        type            wall;
-        inGroups        List<word> 1(wall);
+        type            patch;
         nFaces          600;
         startFace       43775;
     }
     bottom
     {
-        type            wall;
-        inGroups        List<word> 1(wall);
+        type            patch;
         nFaces          600;
         startFace       44375;
     }
     front
     {
-        type            wall;
-        inGroups        List<word> 1(wall);
+        type            patch;
         nFaces          1000;
         startFace       44975;
     }
     back
     {
-        type            wall;
-        inGroups        List<word> 1(wall);
+        type            patch;
         nFaces          1000;
         startFace       45975;
     }
