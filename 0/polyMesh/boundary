@@ -1,0 +1,103 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      binary;
+    class       polyBoundaryMesh;
+    location    "5/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+12
+(
+    inlet
+    {
+        type            patch;
+        nFaces          5863;
+        startFace       2939115;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          4221;
+        startFace       2944978;
+    }
+    top
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          600;
+        startFace       2949199;
+    }
+    bottom
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          600;
+        startFace       2949799;
+    }
+    front
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          1405;
+        startFace       2950399;
+    }
+    back
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          1405;
+        startFace       2951804;
+    }
+    nozzle_int
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          32436;
+        startFace       2953209;
+    }
+    nozzle_ext
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          34782;
+        startFace       2985645;
+    }
+    collector_int
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          6536;
+        startFace       3020427;
+    }
+    collector_ext
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          6352;
+        startFace       3026963;
+    }
+    diffuser_int
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          17218;
+        startFace       3033315;
+    }
+    diffuser_ext
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          17850;
+        startFace       3050533;
+    }
+)
+
+// ************************************************************************* //
