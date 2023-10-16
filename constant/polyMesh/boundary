@@ -9,48 +9,108 @@ FoamFile
 {
     format      binary;
     class       polyBoundaryMesh;
-    location    "constant/polyMesh";
+    location    "5/polyMesh";
     object      boundary;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-6
+14
 (
     left
     {
         type            patch;
-        nFaces          375;
-        startFace       43025;
+        inGroups        (freestream);
+        nFaces          2070;
+        startFace       3037422;
     }
     right
     {
         type            patch;
-        nFaces          375;
-        startFace       43400;
+        inGroups        (freestream);
+        nFaces          1548;
+        startFace       3039492;
     }
     top
     {
         type            patch;
+        inGroups        (freestream);
         nFaces          600;
-        startFace       43775;
+        startFace       3041040;
     }
     bottom
     {
         type            patch;
+        inGroups        (freestream);
         nFaces          600;
-        startFace       44375;
+        startFace       3041640;
     }
     front
     {
         type            patch;
-        nFaces          1000;
-        startFace       44975;
+        inGroups        (freestream);
+        nFaces          1405;
+        startFace       3042240;
     }
     back
     {
         type            patch;
-        nFaces          1000;
-        startFace       45975;
+        inGroups        (freestream);
+        nFaces          1405;
+        startFace       3043645;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          6192;
+        startFace       3045050;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          2784;
+        startFace       3051242;
+    }
+    nozzle_int
+    {
+        type            wall;
+        inGroups        (internal);
+        nFaces          33334;
+        startFace       3054026;
+    }
+    nozzle_ext
+    {
+        type            wall;
+        inGroups        (external);
+        nFaces          33389;
+        startFace       3087360;
+    }
+    collector_int
+    {
+        type            wall;
+        inGroups        (internal);
+        nFaces          6506;
+        startFace       3120749;
+    }
+    collector_ext
+    {
+        type            wall;
+        inGroups        (external);
+        nFaces          6104;
+        startFace       3127255;
+    }
+    diffuser_int
+    {
+        type            wall;
+        inGroups        (internal);
+        nFaces          17228;
+        startFace       3133359;
+    }
+    diffuser_ext
+    {
+        type            wall;
+        inGroups        (external);
+        nFaces          17539;
+        startFace       3150587;
     }
 )
 
