@@ -36,13 +36,13 @@ blocks
 
 boundary
 (
-    inlet
+    left
     {
         type patch;
         faces ((0 4 7 3));
     }
 
-    outlet
+    right
     {
         type patch;
         faces ((1 2 6 5));
@@ -50,25 +50,25 @@ boundary
 
     top
     {
-        type wall;
+        type patch;
         faces ((4 5 6 7));
     }
 
     bottom
     {
-        type wall;
+        type patch;
         faces ((0 3 2 1));
     }
 
     front
     {
-        type wall;
+        type patch;
         faces ((1 5 4 0));
     }
 
     back
     {
-        type wall;
+        type patch;
         faces ((3 7 6 2));
     }
 );
