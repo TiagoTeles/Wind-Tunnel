@@ -14,67 +14,47 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-9
+6
 (
     inlet
     {
         type            patch;
-        nFaces          6788;
-        startFace       2897762;
+        nFaces          375;
+        startFace       43025;
     }
     outlet
     {
         type            patch;
-        nFaces          3066;
-        startFace       2904550;
+        nFaces          375;
+        startFace       43400;
     }
-    domain
-    {
-        type            patch;
-        nFaces          16412;
-        startFace       2907616;
-    }
-    nozzle_int
+    top
     {
         type            wall;
         inGroups        List<word> 1(wall);
-        nFaces          33142;
-        startFace       2924028;
+        nFaces          600;
+        startFace       43775;
     }
-    nozzle_ext
+    bottom
     {
         type            wall;
         inGroups        List<word> 1(wall);
-        nFaces          6981;
-        startFace       2957170;
+        nFaces          600;
+        startFace       44375;
     }
-    collector_int
+    front
     {
         type            wall;
         inGroups        List<word> 1(wall);
-        nFaces          6672;
-        startFace       2964151;
+        nFaces          1000;
+        startFace       44975;
     }
-    collector_ext
+    back
     {
         type            wall;
         inGroups        List<word> 1(wall);
-        nFaces          5998;
-        startFace       2970823;
-    }
-    diffuser_int
-    {
-        type            wall;
-        inGroups        List<word> 1(wall);
-        nFaces          17238;
-        startFace       2976821;
-    }
-    diffuser_ext
-    {
-        type            wall;
-        inGroups        List<word> 1(wall);
-        nFaces          2286;
-        startFace       2994059;
+        nFaces          1000;
+        startFace       45975;
     }
 )
 
