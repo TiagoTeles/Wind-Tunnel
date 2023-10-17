@@ -40,6 +40,19 @@ solvers
         relTol          0.1;
         nSweeps         2;
     }
+
+    Phi
+    {
+        solver GAMG;
+        tolerance 1e-06;
+        relTol 0.01;
+        smoother        GaussSeidel;
+    }
+}
+
+potentialFlow
+{
+    nNonOrthogonalCorrectors  1;
 }
 
 SIMPLE
