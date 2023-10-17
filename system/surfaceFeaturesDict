@@ -23,8 +23,6 @@ cylinder
         "collector_int.stl"
         "diffuser_ext.stl"
         "diffuser_int.stl"
-        "outlet.stl"
-        "inlet.stl"
     );
 
     includedAngle       120;
