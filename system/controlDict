@@ -71,6 +71,13 @@ functions
             (5.70 1.50 2.50)    // Diffuser
         );
     }
+    yPlus
+    {
+        type            yPlus;
+        libs            ("libfieldFunctionObjects.so");
+        writeControl    timeStep;
+        writeInterval   1;
+    }
 }
 
 
