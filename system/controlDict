@@ -56,6 +56,21 @@ functions
         writeInterval   1;
         fields          (U p);
     }
+    probes
+    {
+        type            probes;
+        libs            ("libsampling.so");
+        writeControl    timeStep;
+        writeInterval   1;
+        fields          (U p);
+
+        probeLocations
+        (
+            (3.00 1.50 2.50)    // Nozzle
+            (4.99 1.50 3.05)    // Collector
+            (5.70 1.50 2.50)    // Diffuser
+        );
+    }
 }
 
 
