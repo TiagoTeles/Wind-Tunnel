@@ -24,13 +24,13 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         500;
+endTime         1000;
 
 deltaT          1;
 
 writeControl    timeStep;
 
-writeInterval   50;
+writeInterval   10;
 
 purgeWrite      0;
 
@@ -50,17 +50,11 @@ functions
 {
     residuals
     {
-        type solverInfo;
-        libs (utilityFunctionObjects);
-        fields (U p);
-    }
-    yPlus
-    {
-        type yPlus;
-        libs (fieldFunctionObjects);
-        writeControl writeTime;
-        patches (internal);
-        format gnuplot;
+        type            residuals;
+        libs            ("libutilityFunctionObjects.so");
+        writeControl    timeStep;
+        writeInterval   1;
+        fields          (U p);
     }
 }
 
