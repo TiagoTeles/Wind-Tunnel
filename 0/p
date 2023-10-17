@@ -27,7 +27,7 @@ boundaryField
     outlet
     {
         type            fixedValue;
-        value           uniform 315.2;
+        value           uniform 315.17;
     }
 
     internal
