@@ -64,12 +64,25 @@ SIMPLE
 
 potentialFlow
 {
-    nNonOrthogonalCorrectors  0;
+    nNonOrthogonalCorrectors 0;
 
     residualControl
     {
         p               1e-5;
         Phi             1e-5;
+    }
+}
+
+relaxationFactors
+{
+    fields
+    {
+        p               0.3;
+    }
+    equations
+    {
+        U               0.7;
+        nuTilda         0.7;
     }
 }
 
