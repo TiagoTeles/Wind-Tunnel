@@ -27,9 +27,8 @@ boundaryField
 
     outlet
     {
-        type            matchedFlowRateOutletVelocity;
-        value           uniform (0 0 0);
-        inletPatch      inlet;
+        type            fixedValue;
+        value           uniform (16.42 0 0);
     }
 
     internal
