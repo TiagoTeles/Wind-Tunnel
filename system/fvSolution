@@ -18,9 +18,9 @@ solvers
     p
     {
         solver          GAMG;
+        smoother        GaussSeidel;
         tolerance       1e-06;
         relTol          0.1;
-        smoother        GaussSeidel;
     }
 
     U
@@ -43,16 +43,11 @@ solvers
 
     Phi
     {
-        solver GAMG;
-        tolerance 1e-06;
-        relTol 0.01;
+        solver          GAMG;
         smoother        GaussSeidel;
+        tolerance       1e-06;
+        relTol          0.1;
     }
-}
-
-potentialFlow
-{
-    nNonOrthogonalCorrectors  1;
 }
 
 SIMPLE
@@ -67,16 +62,14 @@ SIMPLE
     }
 }
 
-relaxationFactors
+potentialFlow
 {
-    fields
+    nNonOrthogonalCorrectors  0;
+
+    residualControl
     {
-        p               0.3;
-    }
-    equations
-    {
-        U               0.7;
-        nuTilda         0.7;
+        p               1e-5;
+        Phi             1e-5;
     }
 }
 
