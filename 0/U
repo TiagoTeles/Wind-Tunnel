@@ -46,6 +46,11 @@ boundaryField
         type            freestreamVelocity;
         freestreamValue uniform (0 0 0);
     }
+
+    symmetry
+    {
+        type            symmetryPlane;
+    }
 }
 
 // ************************************************************************* //
