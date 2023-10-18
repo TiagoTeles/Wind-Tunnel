@@ -27,7 +27,8 @@ boundaryField
 
     outlet
     {
-        type            zeroGradient;
+        type                flowRateOutletVelocity;
+        volumetricFlowRate  31.2;
     }
 
     internal
