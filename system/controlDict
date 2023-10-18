@@ -56,6 +56,13 @@ functions
         writeInterval   1;
         fields          (U p);
     }
+    yPlus
+    {
+        type            yPlus;
+        libs            ("libfieldFunctionObjects.so");
+        writeControl    timeStep;
+        writeInterval   10;
+    }
     probes
     {
         type            probes;
@@ -70,13 +77,6 @@ functions
             (4.99 1.50 3.05)    // Collector
             (5.70 1.50 2.50)    // Diffuser
         );
-    }
-    yPlus
-    {
-        type            yPlus;
-        libs            ("libfieldFunctionObjects.so");
-        writeControl    timeStep;
-        writeInterval   1;
     }
 }
 
