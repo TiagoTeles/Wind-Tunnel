@@ -72,42 +72,42 @@ FoamFile
     nozzle_int
     {
         type            wall;
-        inGroups        (interior);
+        inGroups        (internal);
         nFaces          16683;
         startFace       1537444;
     }
     nozzle_ext
     {
         type            wall;
-        inGroups        (exterior);
+        inGroups        (external);
         nFaces          16664;
         startFace       1554127;
     }
     collector_int
     {
         type            wall;
-        inGroups        (interior);
+        inGroups        (internal);
         nFaces          3238;
         startFace       1570791;
     }
     collector_ext
     {
         type            wall;
-        inGroups        (exterior);
+        inGroups        (external);
         nFaces          3069;
         startFace       1574029;
     }
     diffuser_int
     {
         type            wall;
-        inGroups        (interior);
+        inGroups        (internal);
         nFaces          8615;
         startFace       1577098;
     }
     diffuser_ext
     {
         type            wall;
-        inGroups        (exterior);
+        inGroups        (external);
         nFaces          8769;
         startFace       1585713;
     }
