@@ -93,7 +93,7 @@ addLayersControls
         }
         collector_int
         {
-            nSurfaceLayers 1;
+            nSurfaceLayers 2;
         }
         diffuser_int
         {
