@@ -20,98 +20,97 @@ FoamFile
     {
         type            patch;
         inGroups        (freestream);
-        nFaces          1033;
-        startFace       1516498;
+        nFaces          1195;
+        startFace       1317778;
     }
     right
     {
         type            patch;
         inGroups        (freestream);
         nFaces          817;
-        startFace       1517531;
+        startFace       1318973;
     }
     top
     {
         type            patch;
         inGroups        (freestream);
         nFaces          400;
-        startFace       1518348;
+        startFace       1319790;
     }
     bottom
     {
         type            patch;
         inGroups        (freestream);
         nFaces          400;
-        startFace       1518748;
+        startFace       1320190;
     }
     symmetry
     {
         type            symmetryPlane;
-        nFaces          12808;
-        startFace       1519148;
+        nFaces          11234;
+        startFace       1320590;
     }
     back
     {
         type            patch;
         inGroups        (freestream);
         nFaces          1000;
-        startFace       1531956;
+        startFace       1331824;
     }
     inlet
     {
         type            patch;
-        nFaces          3096;
-        startFace       1532956;
+        nFaces          3102;
+        startFace       1332824;
     }
     outlet
     {
         type            patch;
-        nFaces          1392;
-        startFace       1536052;
+        nFaces          758;
+        startFace       1335926;
     }
     nozzle_int
     {
         type            wall;
         inGroups        (internal);
-        nFaces          16683;
-        startFace       1537444;
+        nFaces          16599;
+        startFace       1336684;
     }
     nozzle_ext
     {
         type            wall;
         inGroups        (external);
-        nFaces          16664;
-        startFace       1554127;
+        nFaces          16879;
+        startFace       1353283;
     }
     collector_int
     {
         type            wall;
         inGroups        (internal);
-        nFaces          3238;
-        startFace       1570791;
+        nFaces          3266;
+        startFace       1370162;
     }
     collector_ext
     {
         type            wall;
         inGroups        (external);
-        nFaces          3069;
-        startFace       1574029;
+        nFaces          3058;
+        startFace       1373428;
     }
     diffuser_int
     {
         type            wall;
         inGroups        (internal);
-        nFaces          8615;
-        startFace       1577098;
+        nFaces          8609;
+        startFace       1376486;
     }
     diffuser_ext
     {
         type            wall;
         inGroups        (external);
-        nFaces          8769;
-        startFace       1585713;
+        nFaces          8842;
+        startFace       1385095;
     }
 )
-
 
 // ************************************************************************* //
