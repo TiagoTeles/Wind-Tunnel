@@ -21,22 +21,22 @@ boundaryField
 {
     inlet
     {
-        type            fixedValue;
-        value           uniform (5.4166 0 0);
+        type                flowRateInletVelocity;
+        volumetricFlowRate  31.2/2;
     }
 
     outlet
     {
         type                flowRateOutletVelocity;
-        volumetricFlowRate  16.6;
+        volumetricFlowRate  31.2/2;
     }
 
-    internal
+    wall_int
     {
         type            noSlip;
     }
 
-    external
+    wall_ext
     {
         type            slip;
     }

@@ -30,13 +30,13 @@ boundaryField
         type            zeroGradient;
     }
 
-    internal
+    wall_int
     {
         type            fixedValue;
         value           uniform 0;
     }
 
-    external
+    wall_ext
     {
         type            fixedValue;
         value           uniform 0;
@@ -52,5 +52,6 @@ boundaryField
         type            symmetryPlane;
     }
 }
+
 
 // ************************************************************************* //

@@ -15,7 +15,7 @@ FoamFile
 
 dimensions      [0 2 -1 0 0 0 0];
 
-internalField   uniform 1.9154e-05;
+internalField   uniform 1.92e-05;
 
 boundaryField
 {
@@ -30,13 +30,13 @@ boundaryField
         type            zeroGradient;
     }
 
-    internal
+    wall_int
     {
         type            nutUSpaldingWallFunction;
         value           uniform 0;
     }
 
-    external
+    wall_ext
     {
         type            fixedValue;
         value           uniform 0;
@@ -52,5 +52,6 @@ boundaryField
         type            symmetryPlane;
     }
 }
+
 
 // ************************************************************************* //
