@@ -20,8 +20,8 @@ addLayers       false;
 geometry
 {
     inlet           {type triSurfaceMesh; file "inlet.stl";}
-    test_section    {type triSurfaceMesh; file "test_section.stl";}
     outlet          {type triSurfaceMesh; file "outlet.stl";}
+    test_section    {type triSurfaceMesh; file "test_section.stl";}
 
     nozzle          {type triSurfaceMesh; file "nozzle.stl";}
     nozzle_int      {type triSurfaceMesh; file "nozzle_int.stl";}
@@ -46,7 +46,7 @@ castellatedMeshControls
     resolveFeatureAngle 30;
     allowFreeStandingZoneFaces true;
 
-    locationInMesh (0.001 1.501 2.500);
+    locationInMesh (1e-3 1e-3 1e-3);
 
     refinementSurfaces
     {
@@ -63,7 +63,7 @@ castellatedMeshControls
     refinementRegions
     {
         nozzle       {mode inside; level 2;}
-        test_section {mode inside; level 2;}
+        test_section {mode inside; level 3;}
         collector    {mode inside; level 2;}
         diffuser     {mode inside; level 2;}
     }  
