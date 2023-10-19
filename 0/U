@@ -22,13 +22,13 @@ boundaryField
     inlet
     {
         type                flowRateInletVelocity;
-        volumetricFlowRate  31.2/2;
+        volumetricFlowRate  15.6;
     }
 
     outlet
     {
         type                flowRateOutletVelocity;
-        volumetricFlowRate  31.2/2;
+        volumetricFlowRate  15.6;
     }
 
     wall_int
