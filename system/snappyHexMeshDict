@@ -48,16 +48,6 @@ castellatedMeshControls
 
     locationInMesh (0.001 1.501 2.500);
 
-    features
-    (
-        {file "nozzle_int.eMesh";    level 3;}
-        {file "nozzle_ext.eMesh";    level 3;}
-        {file "collector_int.eMesh"; level 3;}
-        {file "collector_ext.eMesh"; level 3;}
-        {file "diffuser_int.eMesh";  level 3;}
-        {file "diffuser_ext.eMesh";  level 3;}
-    );
-
     refinementSurfaces
     {
         inlet           {level (2 2);}
@@ -91,8 +81,8 @@ snapControls
 addLayersControls
 {
     relativeSizes true;
-    expansionRatio 1.5;
-    finalLayerThickness 0.5;
+    expansionRatio 1.333;
+    finalLayerThickness 0.25;
     minThickness 0.01;
 
     layers
@@ -103,11 +93,11 @@ addLayersControls
         }
         collector_int
         {
-            nSurfaceLayers 8;
+            nSurfaceLayers 1;
         }
         diffuser_int
         {
-            nSurfaceLayers 8;
+            nSurfaceLayers 1;
         }
     }
 
