@@ -47,7 +47,12 @@ boundaryField
         freestreamValue uniform (0 0 0);
     }
 
-    symmetry
+    symmetry_v
+    {
+        type            symmetryPlane;
+    }
+
+    symmetry_h
     {
         type            symmetryPlane;
     }

@@ -47,7 +47,12 @@ boundaryField
         type            zeroGradient;
     }
 
-    symmetry
+    symmetry_v
+    {
+        type            symmetryPlane;
+    }
+
+    symmetry_h
     {
         type            symmetryPlane;
     }
