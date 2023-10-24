@@ -13,15 +13,15 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-castellatedMesh true;
-snap            true;
-addLayers       false;
+castellatedMesh false;
+snap            false;
+addLayers       true;
 
 geometry
 {
     inlet           {type triSurfaceMesh; file "inlet.stl";}
-    test_section    {type triSurfaceMesh; file "test_section.stl";}
     outlet          {type triSurfaceMesh; file "outlet.stl";}
+    test_section    {type triSurfaceMesh; file "test_section.stl";}
 
     nozzle          {type triSurfaceMesh; file "nozzle.stl";}
     nozzle_int      {type triSurfaceMesh; file "nozzle_int.stl";}
@@ -46,7 +46,7 @@ castellatedMeshControls
     resolveFeatureAngle 30;
     allowFreeStandingZoneFaces true;
 
-    locationInMesh (1E-3 1.5 2.5);
+    locationInMesh (1e-3 1e-3 1e-3);
 
     features
     (
@@ -91,8 +91,8 @@ snapControls
 addLayersControls
 {
     relativeSizes true;
-    expansionRatio 1.5;
-    finalLayerThickness 0.5;
+    expansionRatio 1.333;
+    finalLayerThickness 0.25;
     minThickness 0.01;
 
     layers
@@ -103,11 +103,11 @@ addLayersControls
         }
         collector_int
         {
-            nSurfaceLayers 8;
+            nSurfaceLayers 4;
         }
         diffuser_int
         {
-            nSurfaceLayers 8;
+            nSurfaceLayers 4;
         }
     }
 
@@ -137,8 +137,8 @@ meshQualityControls
     maxInternalSkewness 4;
     maxConcave 80;
     minVol -1e30;
-    minTetQuality 1e-15;
-    // minTetQuality -1e30;
+    // minTetQuality 1e-15;
+    minTetQuality -1e30;
     minTwist 0.02;
     minDeterminant 0.001;
     minFaceWeight 0.05;
@@ -148,5 +148,6 @@ meshQualityControls
 }
 
 mergeTolerance 1e-6;
+
 
 // ************************************************************************* //

@@ -1,0 +1,115 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      binary;
+    class       polyBoundaryMesh;
+    location    "4/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+14
+(
+    left
+    {
+        type            patch;
+        inGroups        (freestream);
+        nFaces          445;
+        startFace       701472;
+    }
+    right
+    {
+        type            patch;
+        inGroups        (freestream);
+        nFaces          391;
+        startFace       701917;
+    }
+    top
+    {
+        type            patch;
+        inGroups        (freestream);
+        nFaces          400;
+        startFace       702308;
+    }
+    bottom
+    {
+        type            patch;
+        inGroups        (freestream);
+        nFaces          6378;
+        startFace       702708;
+    }
+    symmetry_v
+    {
+        type            symmetryPlane;
+        nFaces          5846;
+        startFace       709086;
+    }
+    symmetry_h
+    {
+        type            symmetryPlane;
+        nFaces          400;
+        startFace       714932;
+    }
+    inlet
+    {
+        type            wall;
+        nFaces          1548;
+        startFace       715332;
+    }
+    outlet
+    {
+        type            wall;
+        nFaces          519;
+        startFace       716880;
+    }
+    nozzle_int
+    {
+        type            wall;
+        inGroups        (wall_int);
+        nFaces          8338;
+        startFace       717399;
+    }
+    nozzle_ext
+    {
+        type            wall;
+        inGroups        (wall_ext);
+        nFaces          8347;
+        startFace       725737;
+    }
+    collector_int
+    {
+        type            wall;
+        inGroups        (wall_int);
+        nFaces          1620;
+        startFace       734084;
+    }
+    collector_ext
+    {
+        type            wall;
+        inGroups        (wall_ext);
+        nFaces          1598;
+        startFace       735704;
+    }
+    diffuser_int
+    {
+        type            wall;
+        inGroups        (wall_int);
+        nFaces          4311;
+        startFace       737302;
+    }
+    diffuser_ext
+    {
+        type            wall;
+        inGroups        (wall_ext);
+        nFaces          4381;
+        startFace       741613;
+    }
+)
+
+// ************************************************************************* //

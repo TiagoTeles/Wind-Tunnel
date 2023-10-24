@@ -28,15 +28,15 @@ boundaryField
     outlet
     {
         type                flowRateOutletVelocity;
-        volumetricFlowRate  31.2;
+        volumetricFlowRate  15.6;
     }
 
-    internal
+    wall_int
     {
         type            noSlip;
     }
 
-    external
+    wall_ext
     {
         type            slip;
     }
@@ -45,6 +45,11 @@ boundaryField
     {
         type            freestreamVelocity;
         freestreamValue uniform (0 0 0);
+    }
+
+    symmetry
+    {
+        type            symmetryPlane;
     }
 }
 

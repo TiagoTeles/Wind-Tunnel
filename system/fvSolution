@@ -48,9 +48,9 @@ SIMPLE
 
     residualControl
     {
-        p               1e-5;
-        U               1e-5;
-        nuTilda         1e-5;
+        p               1e-4;
+        U               1e-4;
+        nuTilda         1e-4;
     }
 }
 
@@ -66,5 +66,6 @@ relaxationFactors
         nuTilda         0.5;
     }
 }
+
 
 // ************************************************************************* //
