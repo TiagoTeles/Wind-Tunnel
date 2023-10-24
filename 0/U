@@ -28,7 +28,7 @@ boundaryField
     outlet
     {
         type                flowRateOutletVelocity;
-        volumetricFlowRate  15.6;
+        volumetricFlowRate  7.8;
     }
 
     wall_int

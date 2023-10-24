@@ -54,9 +54,9 @@ boundary
         faces ((4 5 6 7));
     }
 
-    bottom
+    symmetry_h
     {
-        type patch;
+        type symmetryPlane;
         faces ((0 3 2 1));
     }
 
@@ -66,9 +66,9 @@ boundary
         faces ((1 5 4 0));
     }
 
-    symmetry_h
+    back
     {
-        type symmetryPlane;
+        type patch;
         faces ((3 7 6 2));
     }
 );

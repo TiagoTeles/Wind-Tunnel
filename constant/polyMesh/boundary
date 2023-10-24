@@ -21,94 +21,94 @@ FoamFile
         type            patch;
         inGroups        (freestream);
         nFaces          445;
-        startFace       701472;
+        startFace       701474;
     }
     right
     {
         type            patch;
         inGroups        (freestream);
         nFaces          391;
-        startFace       701917;
+        startFace       701919;
     }
     top
     {
         type            patch;
         inGroups        (freestream);
         nFaces          400;
-        startFace       702308;
+        startFace       702310;
     }
-    bottom
+    symmetry_h
     {
-        type            patch;
-        inGroups        (freestream);
-        nFaces          6378;
-        startFace       702708;
+        type            symmetryPlane;
+        nFaces          6379;
+        startFace       702710;
     }
     symmetry_v
     {
         type            symmetryPlane;
         nFaces          5846;
-        startFace       709086;
+        startFace       709089;
     }
-    symmetry_h
+    back
     {
-        type            symmetryPlane;
+        type            patch;
+        inGroups        (freestream);
         nFaces          400;
-        startFace       714932;
+        startFace       714935;
     }
     inlet
     {
-        type            wall;
+        type            patch;
         nFaces          1548;
-        startFace       715332;
+        startFace       715335;
     }
     outlet
     {
-        type            wall;
+        type            patch;
         nFaces          519;
-        startFace       716880;
+        startFace       716883;
     }
     nozzle_int
     {
         type            wall;
         inGroups        (wall_int);
         nFaces          8338;
-        startFace       717399;
+        startFace       717402;
     }
     nozzle_ext
     {
         type            wall;
         inGroups        (wall_ext);
         nFaces          8347;
-        startFace       725737;
+        startFace       725740;
     }
     collector_int
     {
         type            wall;
         inGroups        (wall_int);
         nFaces          1620;
-        startFace       734084;
+        startFace       734087;
     }
     collector_ext
     {
         type            wall;
         inGroups        (wall_ext);
         nFaces          1598;
-        startFace       735704;
+        startFace       735707;
     }
     diffuser_int
     {
         type            wall;
         inGroups        (wall_int);
         nFaces          4311;
-        startFace       737302;
+        startFace       737305;
     }
     diffuser_ext
     {
         type            wall;
         inGroups        (wall_ext);
-        nFaces          4381;
-        startFace       741613;
+        nFaces          4384;
+        startFace       741616;
     }
 )
 
