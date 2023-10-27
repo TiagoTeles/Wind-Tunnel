@@ -9,7 +9,7 @@ FoamFile
 {
     format      binary;
     class       polyBoundaryMesh;
-    location    "constant/polyMesh";
+    location    "4/polyMesh";
     object      boundary;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -20,96 +20,96 @@ FoamFile
     {
         type            patch;
         inGroups        (freestream);
-        nFaces          1178;
-        startFace       1764213;
+        nFaces          923;
+        startFace       1186279;
     }
     right
     {
         type            patch;
         inGroups        (freestream);
-        nFaces          776;
-        startFace       1765391;
+        nFaces          779;
+        startFace       1187202;
     }
     top
     {
         type            patch;
         inGroups        (freestream);
         nFaces          400;
-        startFace       1766167;
+        startFace       1187981;
     }
     bottom
     {
         type            patch;
         inGroups        (freestream);
         nFaces          400;
-        startFace       1766567;
+        startFace       1188381;
     }
     symmetry
     {
         type            symmetryPlane;
-        nFaces          14475;
-        startFace       1766967;
+        nFaces          8931;
+        startFace       1188781;
     }
     back
     {
         type            patch;
         inGroups        (freestream);
         nFaces          800;
-        startFace       1781442;
+        startFace       1197712;
     }
     inlet
     {
         type            patch;
-        nFaces          3096;
-        startFace       1782242;
+        nFaces          1704;
+        startFace       1198512;
     }
     outlet
     {
         type            patch;
-        nFaces          758;
-        startFace       1785338;
+        nFaces          675;
+        startFace       1200216;
     }
     nozzle_int
     {
         type            wall;
         inGroups        (wall_int);
-        nFaces          16593;
-        startFace       1786096;
+        nFaces          16701;
+        startFace       1200891;
     }
     nozzle_ext
     {
         type            wall;
         inGroups        (wall_ext);
-        nFaces          16855;
-        startFace       1802689;
+        nFaces          16636;
+        startFace       1217592;
     }
     collector_int
     {
         type            wall;
         inGroups        (wall_int);
-        nFaces          3268;
-        startFace       1819544;
+        nFaces          3235;
+        startFace       1234228;
     }
     collector_ext
     {
         type            wall;
         inGroups        (wall_ext);
-        nFaces          3054;
-        startFace       1822812;
+        nFaces          3069;
+        startFace       1237463;
     }
     diffuser_int
     {
         type            wall;
         inGroups        (wall_int);
-        nFaces          8609;
-        startFace       1825866;
+        nFaces          8615;
+        startFace       1240532;
     }
     diffuser_ext
     {
         type            wall;
         inGroups        (wall_ext);
-        nFaces          8842;
-        startFace       1834475;
+        nFaces          8769;
+        startFace       1249147;
     }
 )
 
