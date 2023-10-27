@@ -5,7 +5,7 @@ This repository contains the OpenFOAM case used during my internship at Centro d
 
 ## Authors
 The following people have contributed to this project:
-* [Tiago Teles](https://www.linkedin.com/in/tiago-moreira-da-fonte-fonseca-teles/)
+* [Tiago Teles](https://www.linkedin.com/in/tiago-fonseca-teles/)
 
 ## Acknowledgements
 I would like to thank Tenente-Coronel Luís Félix and Tenente Vasco Coelho for their availability to host the internship for which this repository is used for.
