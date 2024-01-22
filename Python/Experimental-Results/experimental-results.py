@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import scipy as sp
@@ -105,7 +106,7 @@ if __name__ == '__main__':
 
     # Load Data
     calibration = pd.read_csv('data/calibration.csv', usecols=['alpha', 'beta', 'c_din', 'c_tot', 'c_alpha', 'c_beta'])
-    offset = pd.read_csv('data/reference.csv', usecols=['X', 'Y', 'Z', 'S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7'])
+    offset = pd.read_csv('data/offset.csv', usecols=['X', 'Y', 'Z', 'S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7'])
     data = pd.read_csv('data/data.csv', usecols=['X', 'Y', 'Z', 'S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7'])
 
     # Correct Units (hPa -> Pa)
@@ -120,7 +121,7 @@ if __name__ == '__main__':
     data.loc[:, 'S1':'S7'] = (data.loc[:, 'S1':'S7'] - offset.loc[0, 'S1':'S7']) + np.mean(offset.loc[0, 'S1':'S7'])
 
     # Calculate Velocity
-    if False:
+    if True:
         # Calculate Polynomial Coefficients
         alpha_coeffs, beta_coeffs, c_din_coeffs, c_tot_coeffs = get_polynomial_coeffs(calibration)
 
@@ -149,3 +150,4 @@ if __name__ == '__main__':
     results['p_static'] = p_static
     results['velocity'] = velocity
 
+    print(results)

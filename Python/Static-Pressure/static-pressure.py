@@ -39,7 +39,7 @@ plt.axhline(np.max(test_section['p']), c='tab:green', ls=':', label='Maximum')
 plt.axhline(np.min(test_section['p']), c='tab:red', ls=':', label='Minimum')
 
 plt.xlabel('Streamsiwe Coordinate, [m]')
-plt.ylabel('Pressure, [hPa]')
+plt.ylabel('Static Pressure, [hPa]')
 plt.legend(loc='upper left')
 plt.grid()
 plt.show()
